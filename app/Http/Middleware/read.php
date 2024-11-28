@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\ContactUs;
+use App\Models\Message;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class read
      */
     public function handle(Request $request, Closure $next)
     {
-     $d= ContactUs::where('read',0)->update([
+     $d= Message::where('read',0)->update([
            'read'=>1
         ]);
         return $next($request);
