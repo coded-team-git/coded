@@ -108,11 +108,13 @@
                 </ul>
             </li>
 
-
+@php
+    $count = \App\Models\Message::where('read' , 0)->count();
+@endphp
             <li>
                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                     <i class="mdi mdi-message"></i>
-                    <span>Messages {{-- <b class="text-info">{{ $count }}</b> --}}</span>
+                    <span>Messages <b class="text-info">{{ $count }}</b></span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
                     <li><a href="{{ route('messages.index') }}">Messages</a></li>

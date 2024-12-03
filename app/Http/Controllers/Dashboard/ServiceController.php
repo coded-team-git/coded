@@ -62,7 +62,7 @@ class ServiceController extends Controller
         $data=$request->except('image_path');
         $service = Service::create($data);
 
-        
+
         toastr()->success('Service has been saved successfully!', 'Service');
         return redirect()->route('services.index');
     }
@@ -84,7 +84,7 @@ class ServiceController extends Controller
             'name_ar'=>'required',
             'description_en'=>'required',
             'description_ar'=>'required',
-            'image'=>'nullable|image',
+            'image_path'=>'nullable|image',
 
 
         ]);
