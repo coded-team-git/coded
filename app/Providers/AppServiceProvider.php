@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (App::environment('production')) {
             return $this->app->singleton('path.public', function () {
-                return base_path('../public_html');
+                return base_path('public_html');
             });
         }
     }
